@@ -1,14 +1,7 @@
 #pragma once
 
-#include <string>
-#include <vector>
-#include <array>
-#include <memory>
-#include <unordered_set>
-#include <unordered_map>
-#include <map>
-#include <regex>
-#include "imgui.h"
+#include "extern/imgui/imgui.h"
+#if 0 //def PROUT_IMGUI
 
 class TextEditor
 {
@@ -71,8 +64,8 @@ public:
 		Coordinates() : mLine(0), mColumn(0) {}
 		Coordinates(int aLine, int aColumn) : mLine(aLine), mColumn(aColumn)
 		{
-			assert(aLine >= 0);
-			assert(aColumn >= 0);
+			passert( aLine >= 0, "Invalid line coordinates" );
+			passert( aColumn >= 0, "Invalid col coordinates" );
 		}
 		static Coordinates Invalid() { static Coordinates invalid(-1, -1); return invalid; }
 
@@ -387,3 +380,5 @@ private:
 
 	float mLastClick;
 };
+
+#endif // PROUT_IMGUI

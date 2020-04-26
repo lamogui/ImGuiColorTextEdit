@@ -1,13 +1,7 @@
-#include <algorithm>
-#include <chrono>
-#include <string>
-#include <regex>
-#include <cmath>
 
-#include "TextEditor.h"
 
-#define IMGUI_DEFINE_MATH_OPERATORS
-#include "imgui.h" // for imGui::GetCurrentWindow()
+#include "extern/ImGuiColorTextEdit/TextEditor.h"
+#if 0 // def PROUT_IMGUI
 
 // TODO
 // - multiline comments vs single-line: latter is blocking start of a ML
@@ -3158,3 +3152,5 @@ const TextEditor::LanguageDefinition& TextEditor::LanguageDefinition::Lua()
 	}
 	return langDef;
 }
+
+#endif // PROUT_IMGUI
